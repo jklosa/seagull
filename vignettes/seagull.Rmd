@@ -58,7 +58,8 @@ Once installed, the package shall be loaded in the common way. A simulated
 example data set is available and loaded just as easily:
 
 ```{r, eval = TRUE, echo = TRUE}
-library("seagull")
+# install.packages("devtools")
+devtools::install_github("jklosa/seagull")
 data("seagull_data")
 ```
 
