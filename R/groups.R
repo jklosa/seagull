@@ -1,0 +1,32 @@
+#' @title Group indices for explanatory variables
+#' 
+#' @description A vector of integers which assigns each variable (genotype
+#' marker) to a particular group. The clustering was performed via the R package
+#' \href{http://www.math-evry.cnrs.fr/publications/logiciels}{BALD}. This
+#' package uses linkage disequilibrium as a measure of proximity. In total, 98
+#' groups are available. Group sizes vary from 1 to 23. The median of group
+#' sizes is equal to 3. For more details about the distribution of group sizes,
+#' please check out the example below.
+#' 
+#' @name groups
+#' 
+#' @docType data
+#' 
+#' @author Jan Klosa \email{klosa@fbn-dummerstorf.de}
+#' 
+#' @format A vector consisting of 466 integer values.
+#' 
+#' @seealso \code{\link{plot}}
+#' 
+#' @examples
+#' data(seagull_data)
+#' 
+#' ## Create a vector with group sizes:
+#' sizes <- rep(as.integer(NA), max(groups))
+#' for (i in 1:98) {
+#'   sizes[i] = max(which(groups==i)) - min(which(groups==i)) + 1
+#' }
+#' 
+#' ## Plot the sorted group sizes:
+#' plot(x = seq(1, max(groups), 1), y = sort(sizes))
+"groups"

@@ -1,0 +1,27 @@
+Package: seagull
+Type: Package
+Title: Proximal Gradient Descent Implementation of the Lasso, Group Lasso, and
+    Sparse-Group Lasso for Mixed Models
+Version: 1.0.2
+Date: 2020-01-11
+Authors@R: c(person("Jan", "Klosa", 
+               role = c("aut", "cre"),
+               email = "klosa@fbn-dummerstorf.de"),
+             person("Noah", "Simon", role = "ths"),
+             person("Dörte", "Wittenburg", role = "ths"))
+Maintainer: Jan Klosa <klosa@fbn-dummerstorf.de>
+Description: Proximal gradient descent solver for the operators lasso, group
+    lasso, and sparse-group lasso. The implementation involves backtracking line
+    search and warm starts. Input data needs to be clustered/grouped for the
+    (sparse-)group lasso before calling these algorithms.
+License: GPL (>= 2)
+Depends: R (>= 3.5.0)
+Encoding: UTF-8
+LazyData: true
+Imports: Rcpp (>= 1.0.3)
+LinkingTo: Rcpp, RcppArmadillo
+RoxygenNote: 7.0.2
+Suggests: testthat,
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
