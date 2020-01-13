@@ -25,6 +25,15 @@ Key features:
   - The step size between consecutive iterations is automatically
     determined via *backtracking line search*.
 
+# Installation
+
+To get the current development version from github, please type:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("jklosa/seagull")
+```
+
 # Components
 
 A data set is included and can be loaded:
