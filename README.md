@@ -25,14 +25,6 @@ Key features:
   - The step size between consecutive iterations is automatically
     determined via *backtracking line search*.
 
-# Installation
-
-To get the current release version from CRAN, please type:
-
-``` r
-install.packages("seagull")
-```
-
 # Components
 
 A data set is included and can be loaded:
