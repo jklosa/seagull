@@ -1,7 +1,6 @@
 Package: seagull
 Type: Package
-Title: Proximal Gradient Descent Implementation of the Lasso, Group Lasso, and
-    Sparse-Group Lasso for Mixed Models
+Title: Lasso, Group Lasso, and Sparse-Group Lasso for Mixed Models
 Version: 1.0.2
 Date: 2020-01-11
 Authors@R: c(person("Jan", "Klosa", 
