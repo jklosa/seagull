@@ -14,6 +14,7 @@ Description: Proximal gradient descent solver for the operators lasso, group
     search and warm starts. Input data needs to be clustered/grouped for the
     (sparse-)group lasso before calling these algorithms.
 License: GPL (>= 2)
+URL: https://github.com/jklosa/seagull
 Depends: R (>= 3.5.0)
 Encoding: UTF-8
 LazyData: true
