@@ -176,26 +176,26 @@
 #' points(x = seq(1, fit_l$loops_lambda, 1)[25:50], MSE_sgl[25:50], type = "l", lwd = 2, col = "red")
 #' 
 #' \donttest{
-#'   
-#'   ## A larger example with simulated genetic data:
-#'   data(seagull_data)
-#'   
-#'   fit_l1 <- seagull(y = phenotypes[,1], Z = genotypes, alpha = 1.0)
-#'   fit_l2 <- seagull(y = phenotypes[,2], Z = genotypes, alpha = 1.0)
-#'   fit_l3 <- seagull(y = phenotypes[,3], Z = genotypes, alpha = 1.0,
+#' 
+#' ## A larger example with simulated genetic data:
+#' data(seagull_data)
+#' 
+#' fit_l1 <- seagull(y = phenotypes[,1], Z = genotypes, alpha = 1.0)
+#' fit_l2 <- seagull(y = phenotypes[,2], Z = genotypes, alpha = 1.0)
+#' fit_l3 <- seagull(y = phenotypes[,3], Z = genotypes, alpha = 1.0,
+#'           trace_progress = T)
+#' 
+#' fit_gl1 <- seagull(y = phenotypes[,1], Z = genotypes, alpha = 0.0,
+#'            groups = groups)
+#' fit_gl2 <- seagull(y = phenotypes[,2], Z = genotypes, alpha = 0.0,
+#'            groups = groups)
+#' fit_gl3 <- seagull(y = phenotypes[,3], Z = genotypes, alpha = 0.0,
+#'            groups = groups, trace_progress = T)
+#' 
+#' fit_sgl1 <- seagull(y = phenotypes[,1], Z = genotypes, groups = groups)
+#' fit_sgl2 <- seagull(y = phenotypes[,2], Z = genotypes, groups = groups)
+#' fit_sgl3 <- seagull(y = phenotypes[,3], Z = genotypes, groups = groups,
 #'             trace_progress = T)
-#'   
-#'   fit_gl1 <- seagull(y = phenotypes[,1], Z = genotypes, alpha = 0.0,
-#'              groups = groups)
-#'   fit_gl2 <- seagull(y = phenotypes[,2], Z = genotypes, alpha = 0.0,
-#'              groups = groups)
-#'   fit_gl3 <- seagull(y = phenotypes[,3], Z = genotypes, alpha = 0.0,
-#'              groups = groups, trace_progress = T)
-#'   
-#'   fit_sgl1 <- seagull(y = phenotypes[,1], Z = genotypes, groups = groups)
-#'   fit_sgl2 <- seagull(y = phenotypes[,2], Z = genotypes, groups = groups)
-#'   fit_sgl3 <- seagull(y = phenotypes[,3], Z = genotypes, groups = groups,
-#'               trace_progress = T)
 #' }
 #' 
 #' @export
