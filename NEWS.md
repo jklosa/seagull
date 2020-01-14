@@ -1,6 +1,6 @@
 # seagull 1.0.3
 
-* Exchanged `\dontrun` by `\donttest` in R\seagull.R.
+* Replaced `\dontrun` by `\donttest` in R\seagull.R.
 
 * Shortened title in DESCRIPTION.
 
