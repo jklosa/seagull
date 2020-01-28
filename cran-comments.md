@@ -1,3 +1,20 @@
+## Resubmission
+This is a resubmission. In this version I have:
+
+* Fixed an error which was related to the execution of an example while testing
+on: r-patched-solaris-x86.
+
+
+## Resubmission
+This is a resubmission. In this version I have:
+
+* Reduced the length of the title in DESCRIPTION.
+
+* Replaced \dontrun with \donttest in R\seagull.R.
+
+* Added a URL and BugReports tag in DESCRIPTION.
+
+
 ## Test environments
 * local: windows-x86_64
 * r-hub: ubuntu-gcc-release, fedora-clang-devel, debian-gcc-devel

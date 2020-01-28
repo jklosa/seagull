@@ -27,6 +27,12 @@ Key features:
 
 # Installation
 
+To get the current release version from CRAN, please type:
+
+``` r
+install.packages("seagull")
+```
+
 To get the current development version from github, please type:
 
 ``` r
