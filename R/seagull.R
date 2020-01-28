@@ -134,7 +134,7 @@
 #' n <- 50  ## observations
 #' p <- 8   ## variables
 #' 
-#' ## Create a deisng matrix X for fixed effects to model the intercept:
+#' ## Create a design matrix X for fixed effects to model the intercept:
 #' X <- matrix(1, nrow = n, ncol = 1)
 #' 
 #' ## Create a design matrix Z for random effects:
