@@ -130,6 +130,9 @@
 #' @seealso \code{\link{plot}}
 #' 
 #' @examples
+#' 
+#' \donttest{
+#' 
 #' set.seed(62)
 #' n <- 50  ## observations
 #' p <- 8   ## variables
@@ -174,8 +177,6 @@
 #' plot(x = seq(1, fit_l$loops_lambda, 1)[25:50], MSE_l[25:50], type = "l", lwd = 2)
 #' points(x = seq(1, fit_l$loops_lambda, 1)[25:50], MSE_gl[25:50], type = "l", lwd = 2, col = "blue")
 #' points(x = seq(1, fit_l$loops_lambda, 1)[25:50], MSE_sgl[25:50], type = "l", lwd = 2, col = "red")
-#' 
-#' \donttest{
 #' 
 #' ## A larger example with simulated genetic data:
 #' data(seagull_data)
