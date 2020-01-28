@@ -54,77 +54,77 @@ test_that("Test for dimensionality works.", {
   expect_error(seagull(y = c(1, 1), X = matrix(1, 2, 2), Z = matrix(1, 2, 3), groups = 1), "Mismatching dimension of vector groups. Please assign one group value to each random effect, and either to all or to none of the fixed effects.")
 })
 
-test_that("Set alpha to default.", {
-  expect_warning(seagull(y = 1, Z = 1, groups = 1, alpha = NULL))
-  expect_warning(seagull(y = 1, Z = 1, groups = 1, alpha = "a"))
-  expect_warning(seagull(y = 1, Z = 1, groups = 1, alpha = c(1,1)))
-  expect_warning(seagull(y = 1, Z = 1, groups = 1, alpha = as.numeric(NA)))
-  expect_warning(seagull(y = 1, Z = 1, groups = 1, alpha = as.numeric(Inf)))
-  expect_warning(seagull(y = 1, Z = 1, groups = 1, alpha = -0.1))
-  expect_warning(seagull(y = 1, Z = 1, groups = 1, alpha = 1.1))
-})
-
-test_that("Set relative accuracy to default.", {
-  expect_warning(seagull(y = 1, Z = 1, groups = 1, rel_acc = NULL))
-  expect_warning(seagull(y = 1, Z = 1, groups = 1, rel_acc = "a"))
-  expect_warning(seagull(y = 1, Z = 1, groups = 1, rel_acc = c(1, 1)))
-  expect_warning(seagull(y = 1, Z = 1, groups = 1, rel_acc = as.numeric(NA)))
-  expect_warning(seagull(y = 1, Z = 1, groups = 1, rel_acc = as.numeric(Inf)))
-  expect_warning(seagull(y = 1, Z = 1, groups = 1, rel_acc = 0.0))
-})
-
-test_that("Set number of maximal iterations to default.", {
-  expect_warning(seagull(y = 1, Z = 1, groups = 1, max_iter = NULL))
-  expect_warning(seagull(y = 1, Z = 1, groups = 1, max_iter = "a"))
-  expect_warning(seagull(y = 1, Z = 1, groups = 1, max_iter = c(1, 1)))
-  expect_warning(seagull(y = 1, Z = 1, groups = 1, max_iter = as.numeric(NA)))
-  expect_warning(seagull(y = 1, Z = 1, groups = 1, max_iter = as.numeric(Inf)))
-  expect_warning(seagull(y = 1, Z = 1, groups = 1, max_iter = 0))
-})
-
-test_that("Set gamma for backtracking line search to default.", {
-  expect_warning(seagull(y = 1, Z = 1, groups = 1, gamma_bls = NULL))
-  expect_warning(seagull(y = 1, Z = 1, groups = 1, gamma_bls = "a"))
-  expect_warning(seagull(y = 1, Z = 1, groups = 1, gamma_bls = c(1,1)))
-  expect_warning(seagull(y = 1, Z = 1, groups = 1, gamma_bls = as.numeric(NA)))
-  expect_warning(seagull(y = 1, Z = 1, groups = 1, gamma_bls = as.numeric(Inf)))
-  expect_warning(seagull(y = 1, Z = 1, groups = 1, gamma_bls = 0))
-  expect_warning(seagull(y = 1, Z = 1, groups = 1, gamma_bls = 1))
-})
-
-test_that("Calculate maximal lambda with default algorithm.", {
-  expect_warning(seagull(y = 1, Z = 1, groups = 1, max_lambda = NULL))
-  expect_warning(seagull(y = 1, Z = 1, groups = 1, max_lambda = "a"))
-  expect_warning(seagull(y = 1, Z = 1, groups = 1, max_lambda = c(1, 1)))
-  expect_warning(seagull(y = 1, Z = 1, groups = 1, max_lambda = as.numeric(NA)))
-  expect_warning(seagull(y = 1, Z = 1, groups = 1, max_lambda = as.numeric(Inf)))
-  expect_warning(seagull(y = 1, Z = 1, groups = 1, max_lambda = 0))
-})
-
-test_that("Set xi to default.", {
-  expect_warning(seagull(y = 1, Z = 1, groups = 1, xi = NULL))
-  expect_warning(seagull(y = 1, Z = 1, groups = 1, xi = "a"))
-  expect_warning(seagull(y = 1, Z = 1, groups = 1, xi = c(1, 1)))
-  expect_warning(seagull(y = 1, Z = 1, groups = 1, xi = as.numeric(NA)))
-  expect_warning(seagull(y = 1, Z = 1, groups = 1, xi = as.numeric(Inf)))
-  expect_warning(seagull(y = 1, Z = 1, groups = 1, xi = 0))
-  expect_warning(seagull(y = 1, Z = 1, groups = 1, xi = 1.1))
-})
-
-test_that("Set number of loops for lambda to default.", {
-  expect_warning(seagull(y = 1, Z = 1, groups = 1, loops_lambda = NULL))
-  expect_warning(seagull(y = 1, Z = 1, groups = 1, loops_lambda = "a"))
-  expect_warning(seagull(y = 1, Z = 1, groups = 1, loops_lambda = c(1, 1)))
-  expect_warning(seagull(y = 1, Z = 1, groups = 1, loops_lambda = as.numeric(NA)))
-  expect_warning(seagull(y = 1, Z = 1, groups = 1, loops_lambda = as.numeric(Inf)))
-  expect_warning(seagull(y = 1, Z = 1, groups = 1, loops_lambda = 0))
-  expect_warning(seagull(y = 1, Z = 1, groups = 1, xi = 1.0))
-})
-
-test_that("Set trace_progress to default.", {
-  expect_warning(seagull(y = 1, Z = 1, groups = 1, trace_progress = NULL))
-  expect_warning(seagull(y = 1, Z = 1, groups = 1, trace_progress = "a"))
-  expect_warning(seagull(y = 1, Z = 1, groups = 1, trace_progress = 1))
-  expect_warning(seagull(y = 1, Z = 1, groups = 1, trace_progress = c(TRUE, TRUE)))
-  expect_warning(seagull(y = 1, Z = 1, groups = 1, trace_progress = as.logical(NA)))
-})
+# test_that("Set alpha to default.", {
+#   expect_warning(seagull(y = 1, Z = 1, groups = 1, alpha = NULL))
+#   expect_warning(seagull(y = 1, Z = 1, groups = 1, alpha = "a"))
+#   expect_warning(seagull(y = 1, Z = 1, groups = 1, alpha = c(1, 1)))
+#   expect_warning(seagull(y = 1, Z = 1, groups = 1, alpha = as.numeric(NA)))
+#   expect_warning(seagull(y = 1, Z = 1, groups = 1, alpha = as.numeric(Inf)))
+#   expect_warning(seagull(y = 1, Z = 1, groups = 1, alpha = -0.1))
+#   expect_warning(seagull(y = 1, Z = 1, groups = 1, alpha = 1.1))
+# })
+# 
+# test_that("Set relative accuracy to default.", {
+#   expect_warning(seagull(y = 1, Z = 1, groups = 1, rel_acc = NULL))
+#   expect_warning(seagull(y = 1, Z = 1, groups = 1, rel_acc = "a"))
+#   expect_warning(seagull(y = 1, Z = 1, groups = 1, rel_acc = c(1, 1)))
+#   expect_warning(seagull(y = 1, Z = 1, groups = 1, rel_acc = as.numeric(NA)))
+#   expect_warning(seagull(y = 1, Z = 1, groups = 1, rel_acc = as.numeric(Inf)))
+#   expect_warning(seagull(y = 1, Z = 1, groups = 1, rel_acc = 0.0))
+# })
+# 
+# test_that("Set number of maximal iterations to default.", {
+#   expect_warning(seagull(y = 1, Z = 1, groups = 1, max_iter = NULL))
+#   expect_warning(seagull(y = 1, Z = 1, groups = 1, max_iter = "a"))
+#   expect_warning(seagull(y = 1, Z = 1, groups = 1, max_iter = c(1, 1)))
+#   expect_warning(seagull(y = 1, Z = 1, groups = 1, max_iter = as.numeric(NA)))
+#   expect_warning(seagull(y = 1, Z = 1, groups = 1, max_iter = as.numeric(Inf)))
+#   expect_warning(seagull(y = 1, Z = 1, groups = 1, max_iter = 0))
+# })
+# 
+# test_that("Set gamma for backtracking line search to default.", {
+#   expect_warning(seagull(y = 1, Z = 1, groups = 1, gamma_bls = NULL))
+#   expect_warning(seagull(y = 1, Z = 1, groups = 1, gamma_bls = "a"))
+#   expect_warning(seagull(y = 1, Z = 1, groups = 1, gamma_bls = c(1, 1)))
+#   expect_warning(seagull(y = 1, Z = 1, groups = 1, gamma_bls = as.numeric(NA)))
+#   expect_warning(seagull(y = 1, Z = 1, groups = 1, gamma_bls = as.numeric(Inf)))
+#   expect_warning(seagull(y = 1, Z = 1, groups = 1, gamma_bls = 0))
+#   expect_warning(seagull(y = 1, Z = 1, groups = 1, gamma_bls = 1))
+# })
+# 
+# test_that("Calculate maximal lambda with default algorithm.", {
+#   expect_warning(seagull(y = 1, Z = 1, groups = 1, max_lambda = NULL))
+#   expect_warning(seagull(y = 1, Z = 1, groups = 1, max_lambda = "a"))
+#   expect_warning(seagull(y = 1, Z = 1, groups = 1, max_lambda = c(1, 1)))
+#   expect_warning(seagull(y = 1, Z = 1, groups = 1, max_lambda = as.numeric(NA)))
+#   expect_warning(seagull(y = 1, Z = 1, groups = 1, max_lambda = as.numeric(Inf)))
+#   expect_warning(seagull(y = 1, Z = 1, groups = 1, max_lambda = 0))
+# })
+# 
+# test_that("Set xi to default.", {
+#   expect_warning(seagull(y = 1, Z = 1, groups = 1, xi = NULL))
+#   expect_warning(seagull(y = 1, Z = 1, groups = 1, xi = "a"))
+#   expect_warning(seagull(y = 1, Z = 1, groups = 1, xi = c(1, 1)))
+#   expect_warning(seagull(y = 1, Z = 1, groups = 1, xi = as.numeric(NA)))
+#   expect_warning(seagull(y = 1, Z = 1, groups = 1, xi = as.numeric(Inf)))
+#   expect_warning(seagull(y = 1, Z = 1, groups = 1, xi = 0))
+#   expect_warning(seagull(y = 1, Z = 1, groups = 1, xi = 1.1))
+# })
+# 
+# test_that("Set number of loops for lambda to default.", {
+#   expect_warning(seagull(y = 1, Z = 1, groups = 1, loops_lambda = NULL))
+#   expect_warning(seagull(y = 1, Z = 1, groups = 1, loops_lambda = "a"))
+#   expect_warning(seagull(y = 1, Z = 1, groups = 1, loops_lambda = c(1, 1)))
+#   expect_warning(seagull(y = 1, Z = 1, groups = 1, loops_lambda = as.numeric(NA)))
+#   expect_warning(seagull(y = 1, Z = 1, groups = 1, loops_lambda = as.numeric(Inf)))
+#   expect_warning(seagull(y = 1, Z = 1, groups = 1, loops_lambda = 0))
+#   expect_warning(seagull(y = 1, Z = 1, groups = 1, xi = 1.0))
+# })
+# 
+# test_that("Set trace_progress to default.", {
+#   expect_warning(seagull(y = 1, Z = 1, groups = 1, trace_progress = NULL))
+#   expect_warning(seagull(y = 1, Z = 1, groups = 1, trace_progress = "a"))
+#   expect_warning(seagull(y = 1, Z = 1, groups = 1, trace_progress = 1))
+#   expect_warning(seagull(y = 1, Z = 1, groups = 1, trace_progress = c(TRUE, TRUE)))
+#   expect_warning(seagull(y = 1, Z = 1, groups = 1, trace_progress = as.logical(NA)))
+# })
