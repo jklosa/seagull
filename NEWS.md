@@ -1,3 +1,14 @@
+# seagull 1.0.4
+
+* Replaced the pre-calculation of the matrix `X^T X`, by matrix-vector
+multiplications for the gradients in src\seagull_lasso.cpp,
+src\seagull_group_lasso.cpp, and src\seagull_sparse_group_lasso.cpp. This
+circumvents potential memory issues for the allocation of `X^T X`.
+
+* Fixed an issue related to the variable TEMP2 in src\seagull_lasso.cpp,
+src\seagull_group_lasso.cpp, and src\seagull_sparse_group_lasso.cpp
+
+
 # seagull 1.0.3
 
 * Replaced `\dontrun` by `\donttest` in R\seagull.R.
