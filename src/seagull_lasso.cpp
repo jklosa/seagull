@@ -110,7 +110,7 @@ List seagull_lasso(
   NumericVector VECTOR_TEMP1c (p);
   NumericVector VECTOR_TEMP2c (p);
   NumericVector VECTOR_TEMP3c (n);
-  NumericMatrix MATRIX_X_TRANSP_Xc (p, p);
+  NumericVector VECTOR_TEMP_GRADIENTc (n);
   
   colvec VECTOR_BETA_NEW(VECTOR_BETA_NEWc.begin(), p, false);
   colvec VECTOR_GRADIENT(VECTOR_GRADIENTc.begin(), p, false);
@@ -118,7 +118,7 @@ List seagull_lasso(
   colvec VECTOR_TEMP1(VECTOR_TEMP1c.begin(), p, false);
   colvec VECTOR_TEMP2(VECTOR_TEMP2c.begin(), p, false);
   colvec VECTOR_TEMP3(VECTOR_TEMP3c.begin(), n, false);
-  mat MATRIX_X_TRANSP_X(MATRIX_X_TRANSP_Xc.begin(), p, p, false);
+  colvec VECTOR_TEMP_GRADIENT(VECTOR_TEMP_GRADIENTc.begin(), n, false);
   
   //Additional output variables:
   IntegerVector VECTOR_ITERATIONS (NUMBER_INTERVALS);
@@ -129,8 +129,7 @@ List seagull_lasso(
   /*********************************************************
    **     Beginning of proximal gradient descent:         **
    *********************************************************/
-  //Calculate t(X)*X and t(X)*y:
-  MATRIX_X_TRANSP_X = MATRIX_X.t() * MATRIX_X;
+  //Calculate t(X)*y:
   VECTOR_X_TRANSP_Y = MATRIX_X.t() * VECTOR_Y;
   
   for (index_interval = 0; index_interval < NUMBER_INTERVALS; index_interval++) {
@@ -145,7 +144,9 @@ List seagull_lasso(
     
     while ((!ACCURACY_REACHED) && (COUNTER <= ITERATION_MAX)) {
       //Calculate unscaled gradient t(X)*X*beta - t(X):
-      VECTOR_GRADIENT = MATRIX_X_TRANSP_X * VECTOR_BETA - VECTOR_X_TRANSP_Y;
+      VECTOR_TEMP_GRADIENT = MATRIX_X * VECTOR_BETA;
+      VECTOR_GRADIENT      = MATRIX_X.t() * VECTOR_TEMP_GRADIENT;
+      VECTOR_GRADIENT      = VECTOR_GRADIENT - VECTOR_X_TRANSP_Y;
       
       //Scale gradient with n, i.e. (t(X)*X*beta - t(X)y)/n:
       for (index_j = 0; index_j < p; index_j++) {
@@ -197,6 +198,7 @@ List seagull_lasso(
         TEMP1 = TEMP1 - TEMP2 + (0.5 * TEMP3 / TIME_STEP_T);
         
         //loss_function(beta_new):
+        TEMP2 = 0.0;
         VECTOR_TEMP3 = VECTOR_Y - MATRIX_X * VECTOR_BETA_NEW;
         for (index_i = 0; index_i < n; index_i++) {
           TEMP2 = TEMP2 + VECTOR_TEMP3(index_i) * VECTOR_TEMP3(index_i);
