@@ -52,7 +52,7 @@ single solution for \eqn{\lambda = \lambda_{max}} is calculated. Default
 value is \code{0.01}.}
 
 \item{loops_lambda}{(optional) number of lambdas for the grid search between
-\eqn{\lambda_{max}} and \eqn{\xi * \lambda_{max}}. Loops are performed on a 
+\eqn{\lambda_{max}} and \eqn{\xi * \lambda_{max}}. Loops are performed on a
 logarithmic grid. Float or double input values will be truncated. Default
 value is \code{50}.}
 
@@ -72,16 +72,16 @@ particularly useful for larger data sets.}
 \value{
 A list of estimates and parameters relevant for the computation:
 \describe{
-  \item{fixed_effects}{estimates for the fixed effects b, if present in the
-  model. Each row corresponds to a particular value of \eqn{\lambda}.}
-  \item{random_effects}{predictions for the random effects u. Each row
-  corresponds to a particular value of \eqn{\lambda}.}
-  \item{lambda}{all values for \eqn{\lambda} which were used during the grid
-  search.}
-  \item{iterations}{a sequence of actual iterations for each value of
-  \eqn{\lambda}. If an occurring number is equal to \code{max_iter}, then the
-  algorithm most likely did not converge to \code{rel_acc} during the
-  corresponding run of the grid search.}
+\item{fixed_effects}{estimates for the fixed effects b, if present in the
+model. Each row corresponds to a particular value of \eqn{\lambda}.}
+\item{random_effects}{predictions for the random effects u. Each row
+corresponds to a particular value of \eqn{\lambda}.}
+\item{lambda}{all values for \eqn{\lambda} which were used during the grid
+search.}
+\item{iterations}{a sequence of actual iterations for each value of
+\eqn{\lambda}. If an occurring number is equal to \code{max_iter}, then the
+algorithm most likely did not converge to \code{rel_acc} during the
+corresponding run of the grid search.}
 }
 The following parameters are also returned. But primarily for the purpose of
 comparison and repetition: \code{alpha} (only for the sparse-group lasso),
@@ -127,7 +127,7 @@ set.seed(62)
 n <- 50  ## observations
 p <- 8   ## variables
 
-## Create a deisng matrix X for fixed effects to model the intercept:
+## Create a design matrix X for fixed effects to model the intercept:
 X <- matrix(1, nrow = n, ncol = 1)
 
 ## Create a design matrix Z for random effects:
@@ -168,27 +168,27 @@ plot(x = seq(1, fit_l$loops_lambda, 1)[25:50], MSE_l[25:50], type = "l", lwd = 2
 points(x = seq(1, fit_l$loops_lambda, 1)[25:50], MSE_gl[25:50], type = "l", lwd = 2, col = "blue")
 points(x = seq(1, fit_l$loops_lambda, 1)[25:50], MSE_sgl[25:50], type = "l", lwd = 2, col = "red")
 
-\dontrun{
-  
-  ## A larger example with simulated genetic data:
-  data(seagull_data)
-  
-  fit_l1 <- seagull(y = phenotypes[,1], Z = genotypes, alpha = 1.0)
-  fit_l2 <- seagull(y = phenotypes[,2], Z = genotypes, alpha = 1.0)
-  fit_l3 <- seagull(y = phenotypes[,3], Z = genotypes, alpha = 1.0,
+\donttest{
+
+## A larger example with simulated genetic data:
+data(seagull_data)
+
+fit_l1 <- seagull(y = phenotypes[,1], Z = genotypes, alpha = 1.0)
+fit_l2 <- seagull(y = phenotypes[,2], Z = genotypes, alpha = 1.0)
+fit_l3 <- seagull(y = phenotypes[,3], Z = genotypes, alpha = 1.0,
+          trace_progress = T)
+
+fit_gl1 <- seagull(y = phenotypes[,1], Z = genotypes, alpha = 0.0,
+           groups = groups)
+fit_gl2 <- seagull(y = phenotypes[,2], Z = genotypes, alpha = 0.0,
+           groups = groups)
+fit_gl3 <- seagull(y = phenotypes[,3], Z = genotypes, alpha = 0.0,
+           groups = groups, trace_progress = T)
+
+fit_sgl1 <- seagull(y = phenotypes[,1], Z = genotypes, groups = groups)
+fit_sgl2 <- seagull(y = phenotypes[,2], Z = genotypes, groups = groups)
+fit_sgl3 <- seagull(y = phenotypes[,3], Z = genotypes, groups = groups,
             trace_progress = T)
-  
-  fit_gl1 <- seagull(y = phenotypes[,1], Z = genotypes, alpha = 0.0,
-             groups = groups)
-  fit_gl2 <- seagull(y = phenotypes[,2], Z = genotypes, alpha = 0.0,
-             groups = groups)
-  fit_gl3 <- seagull(y = phenotypes[,3], Z = genotypes, alpha = 0.0,
-             groups = groups, trace_progress = T)
-  
-  fit_sgl1 <- seagull(y = phenotypes[,1], Z = genotypes, groups = groups)
-  fit_sgl2 <- seagull(y = phenotypes[,2], Z = genotypes, groups = groups)
-  fit_sgl3 <- seagull(y = phenotypes[,3], Z = genotypes, groups = groups,
-              trace_progress = T)
 }
 
 }

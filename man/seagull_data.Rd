@@ -7,30 +7,30 @@
 \format{A data set which is based on 1000 individuals and 466 explanatory
 variables.
 \describe{
-  \item{genotypes}{a genotype matrix that contains information from single
-  nucleotide polymorphisms (SNPs). Dimensions are 1000 rows, 466 columns. The
-  data was simulated using the software
-  \href{https://alphagenes.roslin.ed.ac.uk}{AlphaSim} of which an R-package
-  is available. Each row corresponds to a single individual. 1000 individuals
-  were simulated, where 10 half sib families were created. Each family
-  consists of 100 half sibs. The half sibs share a common Sire. 466 SNPs are
-  available, distributed over 2 chromosomes to an equal amount, i.e., the
-  first 233 SNPs are located on chromosome 1, the remaining SNPs are on the
-  second chromosome. The complementary homozygote genotypes are coded as 0
-  and 2, respectively. The heterozygote genotype as 1.}
-  \item{groups}{a vector of integers which assigns each variable (genotype
-  marker) to a particular group. The clustering was performed via the R
-  package \href{http://www.math-evry.cnrs.fr/publications/logiciels}{BALD}.
-  This package uses linkage disequilibrium as a measure of proximity. In
-  total, 98 groups are available. Group sizes vary from 1 to 23. The median
-  of group sizes is equal to 3. For more details about the distribution of
-  the group sizes, please check out the example on this page:
-  \code{\link[seagull]{groups}}.}
-  \item{phenotypes}{a matrix consisting of 1000 rows and 3 columns. Each row
-  corresponds to a different individual. Each column corresponds to a
-  different trait. The different traits were simulated to be uncorrelated to
-  one another. The trait in the first, second, and third column have a
-  heritability equal to 0.1, 0.3, and 0.5, respectively.}
+\item{genotypes}{a genotype matrix that contains information from single
+nucleotide polymorphisms (SNPs). Dimensions are 1000 rows, 466 columns. The
+data was simulated using the software
+\href{https://alphagenes.roslin.ed.ac.uk}{AlphaSim} of which an R-package
+is available. Each row corresponds to a single individual. 1000 individuals
+were simulated, where 10 half sib families were created. Each family
+consists of 100 half sibs. The half sibs share a common Sire. 466 SNPs are
+available, distributed over 2 chromosomes to an equal amount, i.e., the
+first 233 SNPs are located on chromosome 1, the remaining SNPs are on the
+second chromosome. The complementary homozygote genotypes are coded as 0
+and 2, respectively. The heterozygote genotype as 1.}
+\item{groups}{a vector of integers which assigns each variable (genotype
+marker) to a particular group. The clustering was performed via the R
+package \href{http://www.math-evry.cnrs.fr/publications/logiciels}{BALD}.
+This package uses linkage disequilibrium as a measure of proximity. In
+total, 98 groups are available. Group sizes vary from 1 to 23. The median
+of group sizes is equal to 3. For more details about the distribution of
+the group sizes, please check out the example on this page:
+\code{\link[seagull]{groups}}.}
+\item{phenotypes}{a matrix consisting of 1000 rows and 3 columns. Each row
+corresponds to a different individual. Each column corresponds to a
+different trait. The different traits were simulated to be uncorrelated to
+one another. The trait in the first, second, and third column have a
+heritability equal to 0.1, 0.3, and 0.5, respectively.}
 }}
 \description{
 This data set contains a genotype matrix, phenotype vectors for
