@@ -1,3 +1,9 @@
+# seagull 1.0.5
+
+* Wrapped the entire example section in seagull.R into a \donttest environment
+to circumvent troubles with the Solaris OS.
+
+
 # seagull 1.0.4
 
 * Replaced the pre-calculation of the matrix `X^T X`, by matrix-vector
