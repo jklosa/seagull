@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# SeaGuLl
+# seagull
 
 This package provides regularization paths for the lasso, group lasso,
 and sparse-group lasso. The underlying mathematical model is a mixed
