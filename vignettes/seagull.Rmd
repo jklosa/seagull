@@ -8,7 +8,7 @@ output:
     toc: true
     toc_depth: 3
 vignette: >
-  %\VignetteIndexEntry{Introduction to the SeaGuLl package}
+  %\VignetteIndexEntry{Introduction to the seagull package}
   %\VignetteEngine{knitr::rmarkdown}
   \usepackage[utf8]{inputenc}
 ---
@@ -20,7 +20,7 @@ knitr::opts_chunk$set(fig.width=10, fig.height=4.5,
 
 ## Introduction
 
-SeaGuLl is a package that fits a mixed model via sparse-group lasso (SGL)
+`seagull` is a package that fits a mixed model via sparse-group lasso (SGL)
 regularization. Limiting cases of this penalty are the lasso and the group
 lasso, which are also available in this package. Solutions are obtained via
 \textit{proximal gradient descent} on a grid of values for the regularization
